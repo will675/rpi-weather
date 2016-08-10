@@ -21,7 +21,7 @@ class RpiWeather():
         self.matrix.append(Matrix8x8.Matrix8x8(address=0x72, busnum=0))
         self.matrix.append(Matrix8x8.Matrix8x8(address=0x73, busnum=0))
         for m in self.matrix:
-            m.setRotation(3)
+            m.Matrix8x8.setRotation(3)
             m.begin()
           
     def is_valid_matrix(self, matrix):
