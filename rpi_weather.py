@@ -16,10 +16,10 @@ class RpiWeather():
     
     def __init__(self, ):
         self.matrix = []
-        self.matrix.append(Matrix8x8.Matrix8x8(address=0x70, busnum=1))
-        self.matrix.append(Matrix8x8.Matrix8x8(address=0x71, busnum=1))
-        self.matrix.append(Matrix8x8.Matrix8x8(address=0x72, busnum=1))
-        self.matrix.append(Matrix8x8.Matrix8x8(address=0x73, busnum=1))
+        self.matrix.append(Matrix8x8.Matrix8x8(address=0x70, busnum=0))
+        self.matrix.append(Matrix8x8.Matrix8x8(address=0x71, busnum=0))
+        self.matrix.append(Matrix8x8.Matrix8x8(address=0x72, busnum=0))
+        self.matrix.append(Matrix8x8.Matrix8x8(address=0x73, busnum=0))
         for m in self.matrix:
             m.begin()
           
