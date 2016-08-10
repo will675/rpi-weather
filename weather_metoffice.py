@@ -32,26 +32,35 @@ LOCATION_ID = None
 
 ICON_MAP = { # Day forecast codes only
 #   Met Office weather code         LED 8x8 icon
-    "NA":                           "UNKNOWN",
+    0:                              "SUNNY",     # Clear night - MOON ICON
     1:                              "SUNNY",    # Sunny day
-    3:                              "CLOUD",    # Partly cloudy (day)
-    5:                              "UNKNOWN",      # Mist
-    6:                              "UNKNOWN",      # Fog
+    2:                              "CLOUD", # Partly cloudy (night) - PART_CLOUD_NIGHT - filled in partial cloud
+    3:                              "CLOUD",    # Partly cloudy (day) - PART_CLOUD_DAY
+    4:                              "UNKNOWN",  # Not used
+    5:                              "UNKNOWN",      # Mist - FOG ICON
+    6:                              "UNKNOWN",      # Fog - FOG ICON
     7:                              "CLOUD",    # Cloudy
     8:                              "CLOUD",    # Overcast
-    10:                             "SHOWERS",  # Light rain shower (day)
+    9:                              "SHOWERS",  # Light rain shower (night) - SHOWERS_NIGHT - filled in cloud
+    10:                             "SHOWERS",  # Light rain shower (day) - SHOWERS_DAY
     11:                             "RAIN",     # Drizzle
     12:                             "RAIN",     # Light rain
+    13:                             "SHOWERS",  # Heavy rain shower (night)
     14:                             "SHOWERS",  # Heavy rain shower (day)
     15:                             "RAIN",     # Heavy rain
-    17:                             "SHOWERS",  # Sleet shower
+    16:                             "SHOWERS",  # Sleet shower (night)
+    17:                             "SHOWERS",  # Sleet shower (day)
     18:                             "RAIN",     # Sleet
-    20:                             "SHOWERS",  # Hail shower (day)
+    19:                             "SHOWERS",  # Hail shower (night) 
+    20:                             "SHOWERS",  # Hail shower (day) - HAIL ICON (bigger ver of RAIN)
     21:                             "RAIN",     # Hail
+    22:                             "SNOW",     # Light snow shower (night)
     23:                             "SNOW",     # Light snow shower (day)
     24:                             "SNOW",     # Light snow
+    25:                             "SNOW",     # Heavy snow shower (night)
     26:                             "SNOW",     # Heavy snow shower (day)
     27:                             "SNOW",     # Heavy snow
+    28:                             "STORM",    # Thunder shower (night)
     29:                             "STORM",    # Thunder shower (day)
     30:                             "STORM"     # Thunder 
 }
@@ -90,10 +99,16 @@ def make_metoffice_request():
     
 def get_forecast():
     """Return a list of forecast results."""
-    json_data = json.loads(make_metoffice_request()) # Inlcudes day & night weather for 5 days (including today)
+    json_data = json.loads(make_metoffice_request()) # Day & night weather forecast for 5 days (including today)
     forecast = []
-    for day in xrange(4): # Only looking for day weather for first 4 days, ignoring night and 5th day
-        forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["W"])
+    current_hour = time.localtime().tm_hour
+    if (current_hour < 18): # Use day forcast for all days if current time is before 18:00 
+        for day in xrange(4):
+            forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["W"])
+    else: # Use night forecast for first day if current time is equal or after 18:00
+        forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][0]["Rep"][1]["W"])
+        for day in xrange(1, 4):
+            forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["W"])
     return forecast
     
 def print_forecast(forecast=None):
