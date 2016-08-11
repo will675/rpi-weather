@@ -4,13 +4,11 @@ import sys
 import json
 import ConfigParser
 
-
 METOFFICE_URL    = "datapoint.metoffice.gov.uk"
 REQ_BASE    = r"/public/data/val/wxfcs/all/json/"
 CONFIG_FILE = "../weather.cfg"
 API_KEY = None
 LOCATION_ID = None
-
 
 ICON_MAP = { # Day forecast codes only
 #   Met Office weather code         LED 8x8 icon
@@ -129,20 +127,20 @@ def display_forecast(forecast = None, temperature = None):
     for matrix in xrange(4):
         try:
             icon = ICON_MAP[int(forecast[matrix])]
-            # print "icon:", icon
-            display.set_raw64(LED8x8ICONS[icon], matrix)
+            print "icon:", icon
+            # display.set_raw64(LED8x8ICONS[icon], matrix)
         except:
-            # print "UNKNOWN FORECAST CODE FOUND"
-            display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
+            print "UNKNOWN FORECAST CODE FOUND"
+            # display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
     time.sleep(5)
     for matrix in xrange(4):
         try:
             value = temperature[matrix]
-            # print "temperature:", value
-            display.set_raw64(LED8x8ICONS[value], matrix)
+            print "temperature:", value
+            # display.set_raw64(LED8x8ICONS[value], matrix)
         except:
-            # print "TEMPERATURE NOT FOUND"
-            display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
+            print "TEMPERATURE NOT FOUND"
+            # display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
 
 
 #-------------------------------------------------------------------------------

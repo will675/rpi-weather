@@ -65,6 +65,15 @@ ICON_MAP = { # Day forecast codes only
     30:                             "STORM"     # Thunder 
 }
 
+class Unbuffered(object): # Used to ensure sleep function works as expected (http://stackoverflow.com/questions/107705/disable-output-buffering)
+   def __init__(self, stream):
+       self.stream = stream
+   def write(self, data):
+       self.stream.write(data)
+       self.stream.flush()
+   def __getattr__(self, attr):
+       return getattr(self.stream, attr)
+
 def giveup():
     """Action to take if anything bad happens."""
     for matrix in xrange(4):
@@ -99,7 +108,7 @@ def make_metoffice_request():
     
 def get_forecast():
     """Return a list of forecast results."""
-    json_data = json.loads(make_metoffice_request()) # Day & night weather forecast for 5 days (including today)
+    json_data = json.loads(make_metoffice_request())
     forecast = []
     temperature = []
     current_hour = time.localtime().tm_hour
@@ -109,45 +118,59 @@ def get_forecast():
             temperature.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["Dm"])
     else: # Use night forecast for first day if current time is equal or after 18:00
         forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][0]["Rep"][1]["W"])
-        temperature.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][1]["Nm"])
-        
+        temperature.append(json_data["SiteRep"]["DV"]["Location"]["Period"][0]["Rep"][1]["Nm"])
         for day in xrange(1, 4):
             forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["W"])
             temperature.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["Dm"])
-            
-    return forecast
+    return forecast, temperature
     
-def print_forecast(forecast=None):
+def print_forecast(forecast = None, temperature = None):
     """Print forecast to screen."""
-    if forecast == None:
+    if (forecast == None or temperature == None):
         return
     print '-'*20
     print time.strftime('%Y/%m/%d %H:%M:%S')
     print "Location id: {0}".format(LOCATION_ID)
     print '-'*20
+    count = 0
     for daily in forecast:
         try:
             print "Daily code:", daily
             print "Icon: {0}".format(ICON_MAP[int(daily)])
+            print "Temperature: {0}".format(temperature[count])
+            count += 1
         except Exception as err:
             print "Unknown code: {0}".format(err)
 
-def display_forecast(forecast=None):
+def display_forecast(forecast = None, temperature = None):
     """Display forecast as icons on LED 8x8 matrices."""
-    if forecast == None:
+    if (forecast == None or temperature == None):
         return
     for matrix in xrange(4):
         try:
             icon = ICON_MAP[int(forecast[matrix])]
+            # print "icon:", icon
             display.set_raw64(LED8x8ICONS[icon], matrix)
         except:
+            # print "UNKNOWN FORECAST CODE FOUND"
+            display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
+    time.sleep(5)
+    for matrix in xrange(4):
+        try:
+            value = temperature[matrix]
+            # print "temperature:", value
+            display.set_raw64(LED8x8ICONS[value], matrix)
+        except:
+            # print "TEMPERATURE NOT FOUND"
             display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
 
 #-------------------------------------------------------------------------------
 #  M A I N
 #-------------------------------------------------------------------------------
 if __name__ == "__main__":
+    # Need to override buffered version of stdout to ensure sleep function works as expected (http://stackoverflow.com/questions/107705/disable-output-buffering)
+    sys.stdout = Unbuffered(sys.stdout)
     read_config(CONFIG_FILE)
-    forecast = get_forecast()
-    print_forecast(forecast)
-    display_forecast(forecast)
+    forecast, temperature = get_forecast()
+    print_forecast(forecast, temperature)
+    display_forecast(forecast, temperature)
