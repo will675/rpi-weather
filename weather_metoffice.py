@@ -157,7 +157,7 @@ def display_forecast(forecast = None, temperature = None):
     time.sleep(5)
     for matrix in xrange(4):
         try:
-            value = temperature[matrix]
+            value = str(temperature[matrix])
             # print "temperature:", value
             display.set_raw64(LED8x8ICONS[value], matrix)
         except:
