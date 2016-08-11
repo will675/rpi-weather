@@ -159,7 +159,8 @@ def display_forecast(forecast = None, temperature = None):
         try:
             value = str(temperature[matrix])
             # print "temperature:", value
-            display.set_raw64(LED8x8ICONS[value], matrix)
+            # display.set_raw64(LED8x8ICONS[value], matrix)
+            display.set_raw64(LED8x8ICONS["ALL_ON"], matrix)
         except:
             # print "TEMPERATURE NOT FOUND"
             display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
