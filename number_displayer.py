@@ -20,7 +20,7 @@ def display_numbers(top=None):
     if top == None:
         return
     count = 0
-    display.set_raw64(LED8x8ICONS["MINUS"], matrix)
+    display.set_raw64(LED8x8ICONS["MINUS"], 1)
     for i in xrange(top+1):
         for matrix in xrange(4):
             try:
