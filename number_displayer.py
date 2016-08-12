@@ -20,16 +20,11 @@ def display_numbers(top=None):
     if top == None:
         return
     count = 0
-    # display.set_raw64(LED8x8ICONS["MINUS"], 0)
-    # time.sleep(1)
     for i in xrange(top+1):
         for matrix in xrange(4):
             try:
                 print count
-                if count < 40:
-                    display.set_raw64(LED8x8ICONS[str(count)], matrix)
-                else:
-                    display.set_raw64(LED8x8ICONS["PLUS"], matrix)
+                display.set_raw64(LED8x8ICONS[str(count)], matrix)
             except:
                 print "NUMBER NOT KNOWN"
                 display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
