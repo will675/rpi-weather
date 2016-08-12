@@ -18,11 +18,12 @@ import httplib
 import sys
 import json
 import ConfigParser
+import thread
 
-from rpi_weather import RpiWeather
-from led8x8icons import LED8x8ICONS
+# from rpi_weather import RpiWeather
+# from led8x8icons import LED8x8ICONS
 
-display = RpiWeather()
+# display = RpiWeather()
 
 METOFFICE_URL    = "datapoint.metoffice.gov.uk"
 REQ_BASE    = r"/public/data/val/wxfcs/all/json/"
@@ -76,8 +77,8 @@ class Unbuffered(object): # Used to ensure sleep function works as expected (htt
 
 def giveup():
     """Action to take if anything bad happens."""
-    for matrix in xrange(4):
-        display.set_raw64(LED8x8ICONS['UNKNOWN'],matrix)
+    # for matrix in xrange(4):
+        # display.set_raw64(LED8x8ICONS['UNKNOWN'],matrix)
     print "Error occured."
     sys.exit(1)
     
@@ -146,23 +147,25 @@ def display_forecast(forecast = None, temperature = None):
     """Display forecast as icons on LED 8x8 matrices."""
     if (forecast == None or temperature == None):
         return
-    for matrix in xrange(4):
-        try:
-            icon = ICON_MAP[int(forecast[matrix])]
-            print "icon:", icon
-            display.set_raw64(LED8x8ICONS[icon], matrix)
-        except:
-            print "UNKNOWN FORECAST CODE FOUND"
-            display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
-    time.sleep(5)
-    for matrix in xrange(4):
-        try:
-            value = str(temperature[matrix])
-            print "temperature:", value
-            display.set_raw64(LED8x8ICONS[value], matrix)
-        except:
-            print "TEMPERATURE NOT FOUND"
-            display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
+    for turns in xrange(360): # This will loop the current forecast and temp for about an hour before going to get latest from met office
+        for matrix in xrange(4):
+            try:
+                icon = ICON_MAP[int(forecast[matrix])]
+                print "icon:", icon
+                # display.set_raw64(LED8x8ICONS[icon], matrix)
+            except:
+                print "UNKNOWN FORECAST CODE FOUND"
+                # display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
+        time.sleep(5)
+        for matrix in xrange(4):
+            try:
+                value = str(temperature[matrix])
+                print "temperature:", value
+                # display.set_raw64(LED8x8ICONS[value], matrix)
+            except:
+                print "TEMPERATURE NOT FOUND"
+                # display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
+        time.sleep(5)
 
 #-------------------------------------------------------------------------------
 #  M A I N
@@ -171,6 +174,7 @@ if __name__ == "__main__":
     # Need to override buffered version of stdout to ensure sleep function works as expected (http://stackoverflow.com/questions/107705/disable-output-buffering)
     sys.stdout = Unbuffered(sys.stdout)
     read_config(CONFIG_FILE)
-    forecast, temperature = get_forecast()
-    print_forecast(forecast, temperature)
-    # display_forecast(forecast, temperature)
+    while True: # Top level loop in display_forecast() dictates how often new forecast is pulled from metoffice api
+        forecast, temperature = get_forecast()
+        print_forecast(forecast, temperature)
+        display_forecast(forecast, temperature)
