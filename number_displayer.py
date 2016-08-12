@@ -26,7 +26,7 @@ def display_numbers(top=None):
                 print count
                 display.set_raw64(LED8x8ICONS[str(count)], matrix)
                 count += 1
-                time.sleep(2)
+                time.sleep(1)
             except:
                 print "NUMBER NOT KNOWN"
                 display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
