@@ -1,32 +1,12 @@
-#!/usr/bin/env python
-#===============================================================================
-# weather_metoffice.py
-#
-# Get weather forecast from the Met Office and display as 8x8 icons
-#   * Met Office's doc: http://www.metoffice.gov.uk/datapoint/support/api-reference
-#   * Retrieve location id from: http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/sitelist?key=2a26370d-c529-496c-8d9d-7c7b8468e379
-#   * Uses 'UK daily site specific forecast'
-#   * Need to have an API key from Met Office: https://register.metoffice.gov.uk/WaveRegistrationClient/public/register.do?service=datapoint
-#
-# 2016-08-07
-# Created by: Carter Nelson
-# Modified to Met Office by: Will Jenkins
-#===============================================================================
-
 import time
 import httplib
 import sys
 import json
 import ConfigParser
 
-from rpi_weather import RpiWeather
-from led8x8icons import LED8x8ICONS
-
-display = RpiWeather()
-
 METOFFICE_URL    = "datapoint.metoffice.gov.uk"
 REQ_BASE    = r"/public/data/val/wxfcs/all/json/"
-CONFIG_FILE = "weather.cfg"
+CONFIG_FILE = "../weather.cfg"
 API_KEY = None
 LOCATION_ID = None
 
@@ -76,11 +56,9 @@ class Unbuffered(object): # Used to ensure sleep function works as expected (htt
 
 def giveup():
     """Action to take if anything bad happens."""
-    for matrix in xrange(4):
-        display.set_raw64(LED8x8ICONS['UNKNOWN'],matrix)
     print "Error occured."
     sys.exit(1)
-    
+
 def read_config(filename):
     config = ConfigParser.RawConfigParser()
     global API_KEY, LOCATION_ID
@@ -91,7 +69,7 @@ def read_config(filename):
     except Exception as err:
         print err
         giveup()
-        
+
 def make_metoffice_request():
     """Make request to metoffice.gov.uk and return data."""
     REQUEST = REQ_BASE + format(LOCATION_ID) + "?res=daily&key=" + API_KEY
@@ -149,21 +127,21 @@ def display_forecast(forecast = None, temperature = None):
     for matrix in xrange(4):
         try:
             icon = ICON_MAP[int(forecast[matrix])]
-            # print "icon:", icon
-            display.set_raw64(LED8x8ICONS[icon], matrix)
+            print "icon:", icon
+            # display.set_raw64(LED8x8ICONS[icon], matrix)
         except:
-            # print "UNKNOWN FORECAST CODE FOUND"
-            display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
+            print "UNKNOWN FORECAST CODE FOUND"
+            # display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
     time.sleep(5)
     for matrix in xrange(4):
         try:
             value = str(temperature[matrix])
-            # print "temperature:", value
-            display.set_raw64(LED8x8ICONS["1"], matrix)
+            print "temperature:", value
             # display.set_raw64(LED8x8ICONS[value], matrix)
         except:
-            # print "TEMPERATURE NOT FOUND"
-            display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
+            print "TEMPERATURE NOT FOUND"
+            # display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
+
 
 #-------------------------------------------------------------------------------
 #  M A I N
