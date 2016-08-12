@@ -22,16 +22,16 @@ def display_numbers(top=None):
         return
     count = 0
     for i in xrange(top):
+        display.clear_disp()
         for matrix in xrange(4):
             try:
                 print count
                 display.set_raw64(LED8x8ICONS[str(count)], matrix)
+                count += 1
             except:
                 print "NUMBER NOT KNOWN"
                 display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
         time.sleep(1)
-        count += 1
-        display.clear_disp()
         
 #-------------------------------------------------------------------------------
 #  M A I N
