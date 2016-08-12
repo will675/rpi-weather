@@ -25,15 +25,15 @@ def display_numbers(top=None):
             try:
                 print count
                 display.set_raw64(LED8x8ICONS[str(count)], matrix)
-                time.sleep(1)
+
             except:
                 print "NUMBER NOT KNOWN"
                 display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
+        time.sleep(1)
         count += 1
-
 #-------------------------------------------------------------------------------
 #  M A I N
 #-------------------------------------------------------------------------------
 if __name__ == "__main__":
     sys.stdout = Unbuffered(sys.stdout)
-    display_numbers(20)
+    display_numbers(10)
