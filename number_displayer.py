@@ -23,6 +23,7 @@ def display_numbers(top=None):
     count = 0
     for i in xrange(top):
         for matrix in xrange(4):
+            display.clear_disp()
             try:
                 print count
                 display.set_raw64(LED8x8ICONS[str(count)], matrix)
@@ -37,4 +38,4 @@ def display_numbers(top=None):
 #-------------------------------------------------------------------------------
 if __name__ == "__main__":
     sys.stdout = Unbuffered(sys.stdout)
-    display_numbers(10)
+    display_numbers(40)
