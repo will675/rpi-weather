@@ -149,20 +149,19 @@ def display_forecast(forecast = None, temperature = None):
     for matrix in xrange(4):
         try:
             icon = ICON_MAP[int(forecast[matrix])]
-            # print "icon:", icon
+            print "icon:", icon
             display.set_raw64(LED8x8ICONS[icon], matrix)
         except:
-            # print "UNKNOWN FORECAST CODE FOUND"
+            print "UNKNOWN FORECAST CODE FOUND"
             display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
     time.sleep(5)
     for matrix in xrange(4):
         try:
             value = str(temperature[matrix])
-            # print "temperature:", value
-            display.set_raw64(LED8x8ICONS["1"], matrix)
-            # display.set_raw64(LED8x8ICONS[value], matrix)
+            print "temperature:", value
+            display.set_raw64(LED8x8ICONS[value], matrix)
         except:
-            # print "TEMPERATURE NOT FOUND"
+            print "TEMPERATURE NOT FOUND"
             display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
 
 #-------------------------------------------------------------------------------
@@ -174,4 +173,4 @@ if __name__ == "__main__":
     read_config(CONFIG_FILE)
     forecast, temperature = get_forecast()
     print_forecast(forecast, temperature)
-    display_forecast(forecast, temperature)
+    # display_forecast(forecast, temperature)
