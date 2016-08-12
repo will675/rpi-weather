@@ -20,7 +20,7 @@ def display_numbers(top=None):
     if top == None:
         return
     count = 0
-    for i in xrange(top):
+    for i in xrange(top+1):
         for matrix in xrange(4):
             try:
                 print count
@@ -36,4 +36,4 @@ def display_numbers(top=None):
 #-------------------------------------------------------------------------------
 if __name__ == "__main__":
     sys.stdout = Unbuffered(sys.stdout)
-    display_numbers(10)
+    display_numbers(20)
