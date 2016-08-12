@@ -17,6 +17,7 @@ class Unbuffered(object): # Used to ensure sleep function works as expected (htt
 
 def display_numbers(top=None):
     """Display numbers up to top value on LED 8x8 matrices."""
+    display.clear_disp()
     if top == None:
         return
     count = 0
@@ -36,4 +37,4 @@ def display_numbers(top=None):
 #-------------------------------------------------------------------------------
 if __name__ == "__main__":
     sys.stdout = Unbuffered(sys.stdout)
-    display_numbers(20)
+    display_numbers(10)
