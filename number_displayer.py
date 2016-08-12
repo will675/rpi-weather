@@ -20,11 +20,12 @@ def display_numbers(top=None):
     if top == None:
         return
     count = 0
-    for i in xrange(top+1):
+    for i in xrange(top):
         for matrix in xrange(4):
             try:
                 print count
                 display.set_raw64(LED8x8ICONS[str(count)], matrix)
+
             except:
                 print "NUMBER NOT KNOWN"
                 display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
@@ -35,4 +36,4 @@ def display_numbers(top=None):
 #-------------------------------------------------------------------------------
 if __name__ == "__main__":
     sys.stdout = Unbuffered(sys.stdout)
-    display_numbers(40)
+    display_numbers(20)
