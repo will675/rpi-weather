@@ -52,8 +52,8 @@ ICON_MAP = { # Day forecast codes only
     16:                             "SHOWERS",      # Sleet shower (night)
     17:                             "SHOWERS",      # Sleet shower (day)
     18:                             "RAIN",         # Sleet
-    19:                             "HAIL",      # Hail shower (night) 
-    20:                             "HAIL",      # Hail shower (day) - HAIL ICON (bigger ver of RAIN)
+    19:                             "HAIL",         # Hail shower (night) 
+    20:                             "HAIL",         # Hail shower (day)
     21:                             "HAIL",         # Hail
     22:                             "SNOW",         # Light snow shower (night)
     23:                             "SNOW",         # Light snow shower (day)
