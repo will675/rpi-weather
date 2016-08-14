@@ -33,37 +33,37 @@ LOCATION_ID = None
 
 ICON_MAP = { # Day forecast codes only
 #   Met Office weather code         LED 8x8 icon
-    0:                              "SUNNY",     # Clear night - MOON ICON
-    1:                              "SUNNY",    # Sunny day
-    2:                              "CLOUD", # Partly cloudy (night) - PART_CLOUD_NIGHT - filled in partial cloud
-    3:                              "CLOUD",    # Partly cloudy (day) - PART_CLOUD_DAY
-    4:                              "UNKNOWN",  # Not used
-    5:                              "UNKNOWN",      # Mist - FOG ICON
-    6:                              "UNKNOWN",      # Fog - FOG ICON
-    7:                              "CLOUD",    # Cloudy
-    8:                              "CLOUD",    # Overcast
-    9:                              "SHOWERS",  # Light rain shower (night) - SHOWERS_NIGHT - filled in cloud
-    10:                             "SHOWERS",  # Light rain shower (day) - SHOWERS_DAY
-    11:                             "RAIN",     # Drizzle
-    12:                             "RAIN",     # Light rain
-    13:                             "SHOWERS",  # Heavy rain shower (night)
-    14:                             "SHOWERS",  # Heavy rain shower (day)
-    15:                             "RAIN",     # Heavy rain
-    16:                             "SHOWERS",  # Sleet shower (night)
-    17:                             "SHOWERS",  # Sleet shower (day)
-    18:                             "RAIN",     # Sleet
-    19:                             "SHOWERS",  # Hail shower (night) 
-    20:                             "SHOWERS",  # Hail shower (day) - HAIL ICON (bigger ver of RAIN)
-    21:                             "RAIN",     # Hail
-    22:                             "SNOW",     # Light snow shower (night)
-    23:                             "SNOW",     # Light snow shower (day)
-    24:                             "SNOW",     # Light snow
-    25:                             "SNOW",     # Heavy snow shower (night)
-    26:                             "SNOW",     # Heavy snow shower (day)
-    27:                             "SNOW",     # Heavy snow
-    28:                             "STORM",    # Thunder shower (night)
-    29:                             "STORM",    # Thunder shower (day)
-    30:                             "STORM"     # Thunder 
+    0:                              "MOON",         # Clear night
+    1:                              "SUNNY",        # Sunny day
+    2:                              "PART_CLOUD",   # Partly cloudy (night)
+    3:                              "PART_CLOUD",   # Partly cloudy (day)
+    4:                              "UNKNOWN",      # Not used
+    5:                              "FOG",          # Mist
+    6:                              "FOG",          # Fog
+    7:                              "CLOUD",        # Cloudy
+    8:                              "CLOUD",        # Overcast
+    9:                              "SHOWERS",      # Light rain shower (night)
+    10:                             "SHOWERS",      # Light rain shower (day)
+    11:                             "RAIN",         # Drizzle
+    12:                             "RAIN",         # Light rain
+    13:                             "SHOWERS",      # Heavy rain shower (night)
+    14:                             "SHOWERS",      # Heavy rain shower (day)
+    15:                             "RAIN",         # Heavy rain
+    16:                             "SHOWERS",      # Sleet shower (night)
+    17:                             "SHOWERS",      # Sleet shower (day)
+    18:                             "RAIN",         # Sleet
+    19:                             "HAIL",      # Hail shower (night) 
+    20:                             "HAIL",      # Hail shower (day) - HAIL ICON (bigger ver of RAIN)
+    21:                             "HAIL",         # Hail
+    22:                             "SNOW",         # Light snow shower (night)
+    23:                             "SNOW",         # Light snow shower (day)
+    24:                             "SNOW",         # Light snow
+    25:                             "SNOW",         # Heavy snow shower (night)
+    26:                             "SNOW",         # Heavy snow shower (day)
+    27:                             "SNOW",         # Heavy snow
+    28:                             "STORM",        # Thunder shower (night)
+    29:                             "STORM",        # Thunder shower (day)
+    30:                             "STORM"         # Thunder 
 }
 
 class Unbuffered(object): # Used to ensure sleep function works as expected (http://stackoverflow.com/questions/107705/disable-output-buffering)
