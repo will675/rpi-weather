@@ -18,7 +18,7 @@ import httplib
 import sys
 import json
 import ConfigParser
-import thread
+import logging
 
 # from rpi_weather import RpiWeather
 # from led8x8icons import LED8x8ICONS
@@ -30,6 +30,8 @@ REQ_BASE    = r"/public/data/val/wxfcs/all/json/"
 CONFIG_FILE = "weather.cfg"
 API_KEY = None
 LOCATION_ID = None
+LOG_FILE = "./logs/current.log"
+LOG_PATH = None
 
 ICON_MAP = { # Day forecast codes only
 #   Met Office weather code         LED 8x8 icon
@@ -89,9 +91,21 @@ def read_config(filename):
         config.read(filename)
         API_KEY = config.get('config','API_KEY')
         LOCATION_ID = config.get('config','LOCATION_ID')
+        LOG_FILE = config.get('config', 'LOG_FILE')
+        LOG_PATH = config.get('config', 'LOG_PATH')
+        print API_KEY
+        print LOCATION_ID
+        print LOG_FILE
+        print LOG_PATH
     except Exception as err:
         print err
         giveup()
+
+def start_logging():
+    logging.basicConfig(filename = LOG_FILE, level = logging.DEBUG)
+    logging.debug("This is a test debug message")
+    logging.info("This is a test info message")
+
         
 def make_metoffice_request():
     """Make request to metoffice.gov.uk and return data."""
@@ -174,6 +188,7 @@ if __name__ == "__main__":
     # Need to override buffered version of stdout to ensure sleep function works as expected (http://stackoverflow.com/questions/107705/disable-output-buffering)
     sys.stdout = Unbuffered(sys.stdout)
     read_config(CONFIG_FILE)
+    start_logging()
     while True: # Top level loop in display_forecast() dictates how often new forecast is pulled from metoffice api
         forecast, temperature = get_forecast()
         print_forecast(forecast, temperature)
