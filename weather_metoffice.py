@@ -32,7 +32,7 @@ REQ_BASE    = r"/public/data/val/wxfcs/all/json/"
 CONFIG_FILE = "weather.cfg"
 API_KEY = None
 LOCATION_ID = None
-LOG_FILE = "./logs/current.log"
+LOG_FILE = None
 LOG_TO_FILE = False
 
 ICON_MAP = { # Day forecast codes only
@@ -103,7 +103,9 @@ def read_config(filename):
         giveup()
 
 def start_logging():
-    handler = TimedRotatingFileHandler(LOG_FILE, when='m', interval=10, backupCount=5)
+    handler = TimedRotatingFileHandler(LOG_FILE, when='s', interval=10, backupCount=5)
+    formatter = logging.Formatter("%(asctime)s : %(levelname)s : %(message)s", "%Y-%m-%d %H:%M:%S")
+    handler.setFormatter(formatter)
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
     logger.addHandler(handler)
@@ -113,23 +115,24 @@ def start_logging():
         
 def make_metoffice_request():
     """Make request to metoffice.gov.uk and return data."""
-    REQUEST = REQ_BASE + format(LOCATION_ID) + "?res=dailyx&key=" + API_KEY
+    REQUEST = REQ_BASE + format(LOCATION_ID) + "?res=daily&key=" + API_KEY
     try:
         conn = httplib.HTTPConnection(METOFFICE_URL)
         conn.request("GET", REQUEST)
         resp = conn.getresponse()
         data = resp.read()
-        print resp.status
-        print "LOG_TO_FILE =", LOG_TO_FILE
         if resp.status != 200:
             if LOG_TO_FILE == 'True':
-                print 'here'
                 logging.error("Non-200 status returned by api: {}".format(resp.status))
 
             else:
-                print 'there'
                 print "Non-200 status returned by api: {}".format(resp.status)
-        giveup()
+            giveup()
+        else:
+            if LOG_TO_FILE == 'True':
+                logging.info("200 status returned by api")
+            else:
+                print "200 status returned by api"
     except Exception as err:
         print err
     else:
