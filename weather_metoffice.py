@@ -144,16 +144,25 @@ def get_forecast():
     forecast = []
     temperature = []
     current_hour = time.localtime().tm_hour
-    if (current_hour < 18): # Use day forcast for all days if current time is before 18:00 
+    if (current_hour < 180): # Use day forcast for all days if current time is before 18:00 
         for day in xrange(4):
             forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["W"])
             temperature.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["Dm"])
+            if LOG_TO_FILE == 'True':
+                print '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@', day
+                print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", forecast[day]
+                print "########################################", ICON_MAP[int(forecast[day])] 
+                logging.info("Day {0} : forecast - {1} - {2}".format(day, forecast[day], ICON_MAP[int(forecast[day])]))
+                logging.info("Day {0} maximum temp: {1}".format(day, temperature[day]))
+            else:
+                print "Day {0} forecast: {1}".format(day, forecast[day])
     else: # Use night forecast for first day if current time is equal or after 18:00
         forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][0]["Rep"][1]["W"])
         temperature.append(json_data["SiteRep"]["DV"]["Location"]["Period"][0]["Rep"][1]["Nm"])
         for day in xrange(1, 4):
             forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["W"])
             temperature.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["Dm"])
+    print forecast
     return forecast, temperature
     
 def print_forecast(forecast = None, temperature = None):
