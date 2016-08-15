@@ -20,6 +20,8 @@ import json
 import ConfigParser
 import logging
 
+from logging.handlers import TimedRotatingFileHandler
+
 # from rpi_weather import RpiWeather
 # from led8x8icons import LED8x8ICONS
 
@@ -31,7 +33,7 @@ CONFIG_FILE = "weather.cfg"
 API_KEY = None
 LOCATION_ID = None
 LOG_FILE = "./logs/current.log"
-LOG_PATH = None
+LOG_TO_FILE = False
 
 ICON_MAP = { # Day forecast codes only
 #   Met Office weather code         LED 8x8 icon
@@ -68,14 +70,16 @@ ICON_MAP = { # Day forecast codes only
     30:                             "STORM"         # Thunder 
 }
 
-class Unbuffered(object): # Used to ensure sleep function works as expected (http://stackoverflow.com/questions/107705/disable-output-buffering)
-   def __init__(self, stream):
-       self.stream = stream
-   def write(self, data):
-       self.stream.write(data)
-       self.stream.flush()
-   def __getattr__(self, attr):
-       return getattr(self.stream, attr)
+class Unbuffered(object):
+    """Ensures sleep function works as expected 
+    (http://stackoverflow.com/questions/107705/disable-output-buffering)"""
+    def __init__(self, stream):
+        self.stream = stream
+    def write(self, data):
+        self.stream.write(data)
+        self.stream.flush()
+    def __getattr__(self, attr):
+        return getattr(self.stream, attr)
 
 def giveup():
     """Action to take if anything bad happens."""
@@ -85,39 +89,49 @@ def giveup():
     sys.exit(1)
     
 def read_config(filename):
+    """Get config settings"""
     config = ConfigParser.RawConfigParser()
-    global API_KEY, LOCATION_ID
+    global API_KEY, LOCATION_ID, LOG_FILE, LOG_TO_FILE
     try:
         config.read(filename)
         API_KEY = config.get('config','API_KEY')
         LOCATION_ID = config.get('config','LOCATION_ID')
         LOG_FILE = config.get('config', 'LOG_FILE')
-        LOG_PATH = config.get('config', 'LOG_PATH')
-        print API_KEY
-        print LOCATION_ID
-        print LOG_FILE
-        print LOG_PATH
+        LOG_TO_FILE = config.get('config', 'LOG_TO_FILE')
     except Exception as err:
         print err
         giveup()
 
 def start_logging():
-    logging.basicConfig(filename = LOG_FILE, level = logging.DEBUG)
-    logging.debug("This is a test debug message")
-    logging.info("This is a test info message")
-
+    handler = TimedRotatingFileHandler(LOG_FILE, when='m', interval=10, backupCount=5)
+    logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG)
+    logger.addHandler(handler)
+    logging.info('-'*35)
+    logging.info("Script started: {0}".format(time.strftime('%Y/%m/%d %H:%M:%S')))
+    logging.info('-'*35)
         
 def make_metoffice_request():
     """Make request to metoffice.gov.uk and return data."""
-    REQUEST = REQ_BASE + format(LOCATION_ID) + "?res=daily&key=" + API_KEY
+    REQUEST = REQ_BASE + format(LOCATION_ID) + "?res=dailyx&key=" + API_KEY
     try:
         conn = httplib.HTTPConnection(METOFFICE_URL)
         conn.request("GET", REQUEST)
         resp = conn.getresponse()
         data = resp.read()
+        print resp.status
+        print "LOG_TO_FILE =", LOG_TO_FILE
+        if resp.status != 200:
+            if LOG_TO_FILE == 'True':
+                print 'here'
+                logging.error("Non-200 status returned by api: {}".format(resp.status))
+
+            else:
+                print 'there'
+                print "Non-200 status returned by api: {}".format(resp.status)
+        giveup()
     except Exception as err:
         print err
-        giveup()
     else:
         return data
     
