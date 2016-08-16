@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+#===============================================================================
+# number_displayer.py
+# 
+# 2016-08-10
+# Test module used to display numbers to 8x8 led matrices to check how they look
+#===============================================================================
+
 import time
 import sys
 
