@@ -37,8 +37,8 @@ LOG_TO_FILE = False
 
 ICON_MAP = { # Day forecast codes only
 #   Met Office weather code         LED 8x8 icon
-    0:                              "MOON",         # Clear night
-    1:                              "SUNNY",        # Sunny day
+    # 0:                              "MOON",         # Clear night
+    # 1:                              "SUNNY",        # Sunny day
     2:                              "PART_CLOUD",   # Partly cloudy (night)
     3:                              "PART_CLOUD",   # Partly cloudy (day)
     4:                              "UNKNOWN",      # Not used
@@ -124,7 +124,6 @@ def make_metoffice_request():
         if resp.status != 200:
             if LOG_TO_FILE == 'True':
                 logging.error("Non-200 status returned by api: {}".format(resp.status))
-
             else:
                 print "Non-200 status returned by api: {}".format(resp.status)
             giveup()
@@ -134,6 +133,7 @@ def make_metoffice_request():
             else:
                 print "200 status returned by api"
     except Exception as err:
+        logging.error("Error encountered on api request: {}".format(err))
         print err
     else:
         return data
@@ -144,25 +144,53 @@ def get_forecast():
     forecast = []
     temperature = []
     current_hour = time.localtime().tm_hour
-    if (current_hour < 180): # Use day forcast for all days if current time is before 18:00 
+    if (current_hour < 1): # Use day forcast for all days if current time is before 18:00 
         for day in xrange(4):
             forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["W"])
             temperature.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["Dm"])
             if LOG_TO_FILE == 'True':
-                print '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@', day
-                print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", forecast[day]
-                print "########################################", ICON_MAP[int(forecast[day])] 
-                logging.info("Day {0} : forecast - {1} - {2}".format(day, forecast[day], ICON_MAP[int(forecast[day])]))
-                logging.info("Day {0} maximum temp: {1}".format(day, temperature[day]))
+                try:
+                    logging.info("Day {0} : forecast - {1} - {2}".format(day, forecast[day], ICON_MAP[int(forecast[day])]))
+                    logging.info("Day {0} : maximum temp - {1}".format(day, temperature[day]))
+                except Exception as err:
+                    logging.error("Day {0} : unknown weather type encountered - {1}".format(day, err))
             else:
-                print "Day {0} forecast: {1}".format(day, forecast[day])
+                try:
+                    print "Day {0} : forecast - {1} - {2}".format(day, forecast[day], ICON_MAP[int(forecast[day])])
+                    print "Day {0} : maximum temp - {1}".format(day, temperature[day])
+                except Exception as err:
+                    print "Day {0} : unknown weather type encountered - {1}".format(day, err)
     else: # Use night forecast for first day if current time is equal or after 18:00
         forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][0]["Rep"][1]["W"])
         temperature.append(json_data["SiteRep"]["DV"]["Location"]["Period"][0]["Rep"][1]["Nm"])
+        if LOG_TO_FILE == 'True':
+            try:
+                logging.info("Night {0} : forecast - {1} - {2}".format(0, forecast[0], ICON_MAP[int(forecast[0])]))
+                logging.info("Night {0} : minimum temp - {1}".format(0, temperature[0]))
+            except Exception as err:
+                logging.error("Night {0} : unknown weather type encountered - {1}".format(0, err))
+        else:
+            try:
+                print "Night {0} : forecast - {1} - {2}".format(0, forecast[0], ICON_MAP[int(forecast[0])])
+                print "Night {0} : minimum temp - {1}".format(0, temperature[0])
+            except Exception as err:
+                print "Night {0} : unknown weather type encountered - {1}".format(0, err)
+                
         for day in xrange(1, 4):
             forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["W"])
             temperature.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["Dm"])
-    print forecast
+            if LOG_TO_FILE == 'True':
+                try:
+                    logging.info("Day {0} : forecast - {1} - {2}".format(day, forecast[day], ICON_MAP[int(forecast[day])]))
+                    logging.info("Day {0} : maximum temp - {1}".format(day, temperature[day]))
+                except Exception as err:
+                    logging.error("Day {0} : unknown weather type encountered - {1}".format(day, err))
+            else:
+                try:
+                    print "Day {0} : forecast - {1} - {2}".format(day, forecast[day], ICON_MAP[int(forecast[day])])
+                    print "Day {0} : maximum temp - {1}".format(day, temperature[day])
+                except Exception as err:
+                    print "Day {0} : unknown weather type encountered - {1}".format(day, err)
     return forecast, temperature
     
 def print_forecast(forecast = None, temperature = None):
