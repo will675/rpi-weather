@@ -18,18 +18,23 @@ import httplib
 import sys
 import json
 import ConfigParser
-import thread
+import logging
 
-# from rpi_weather import RpiWeather
-# from led8x8icons import LED8x8ICONS
+from logging.handlers import TimedRotatingFileHandler
 
-# display = RpiWeather()
+from rpi_weather import RpiWeather
+from led8x8icons import LED8x8ICONS
+
+display = RpiWeather()
 
 METOFFICE_URL    = "datapoint.metoffice.gov.uk"
 REQ_BASE    = r"/public/data/val/wxfcs/all/json/"
 CONFIG_FILE = "weather.cfg"
 API_KEY = None
 LOCATION_ID = None
+LOG_FILE = None
+LOG_TO_FILE = False
+NIGHT_START = None
 
 ICON_MAP = { # Day forecast codes only
 #   Met Office weather code         LED 8x8 icon
@@ -66,32 +71,49 @@ ICON_MAP = { # Day forecast codes only
     30:                             "STORM"         # Thunder 
 }
 
-class Unbuffered(object): # Used to ensure sleep function works as expected (http://stackoverflow.com/questions/107705/disable-output-buffering)
-   def __init__(self, stream):
-       self.stream = stream
-   def write(self, data):
-       self.stream.write(data)
-       self.stream.flush()
-   def __getattr__(self, attr):
-       return getattr(self.stream, attr)
+class Unbuffered(object):
+    """Ensures sleep function works as expected 
+    (http://stackoverflow.com/questions/107705/disable-output-buffering)"""
+    def __init__(self, stream):
+        self.stream = stream
+    def write(self, data):
+        self.stream.write(data)
+        self.stream.flush()
+    def __getattr__(self, attr):
+        return getattr(self.stream, attr)
 
 def giveup():
     """Action to take if anything bad happens."""
-    # for matrix in xrange(4):
-        # display.set_raw64(LED8x8ICONS['UNKNOWN'],matrix)
+    for matrix in xrange(4):
+        display.set_raw64(LED8x8ICONS['UNKNOWN'],matrix)
     print "Error occured."
     sys.exit(1)
     
 def read_config(filename):
+    """Get config settings"""
     config = ConfigParser.RawConfigParser()
-    global API_KEY, LOCATION_ID
+    global API_KEY, LOCATION_ID, LOG_FILE, LOG_TO_FILE, NIGHT_START
     try:
         config.read(filename)
-        API_KEY = config.get('config','API_KEY')
+        API_KEY     = config.get('config','API_KEY')
         LOCATION_ID = config.get('config','LOCATION_ID')
+        LOG_FILE    = config.get('config', 'LOG_FILE')
+        LOG_TO_FILE = config.get('config', 'LOG_TO_FILE')
+        NIGHT_START = config.get('config', 'NIGHT_START')
     except Exception as err:
         print err
         giveup()
+
+def start_logging():
+    handler = TimedRotatingFileHandler(LOG_FILE, when='d', interval=1, backupCount=5)
+    formatter = logging.Formatter("%(asctime)s : %(levelname)s : %(message)s", "%Y-%m-%d %H:%M:%S")
+    handler.setFormatter(formatter)
+    logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG)
+    logger.addHandler(handler)
+    logging.info('-'*35)
+    logging.info("Script started: {0}".format(time.strftime('%Y/%m/%d %H:%M:%S')))
+    logging.info('-'*35)
         
 def make_metoffice_request():
     """Make request to metoffice.gov.uk and return data."""
@@ -101,9 +123,20 @@ def make_metoffice_request():
         conn.request("GET", REQUEST)
         resp = conn.getresponse()
         data = resp.read()
+        if resp.status != 200:
+            if LOG_TO_FILE == 'True':
+                logging.error("Non-200 status returned by api: {}".format(resp.status))
+            else:
+                print "Non-200 status returned by api: {}".format(resp.status)
+            giveup()
+        else:
+            if LOG_TO_FILE == 'True':
+                logging.info("200 status returned by api")
+            else:
+                print "200 status returned by api"
     except Exception as err:
+        logging.error("Error encountered on api request: {}".format(err))
         print err
-        giveup()
     else:
         return data
     
@@ -113,35 +146,54 @@ def get_forecast():
     forecast = []
     temperature = []
     current_hour = time.localtime().tm_hour
-    if (current_hour < 18): # Use day forcast for all days if current time is before 18:00 
+    if (current_hour < int(NIGHT_START)): # Use day forcast for all days if current time is before 18:00 
         for day in xrange(4):
             forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["W"])
             temperature.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["Dm"])
+            if LOG_TO_FILE == 'True':
+                try:
+                    logging.info("Day {0} : forecast - {1} - {2}".format(day, forecast[day], ICON_MAP[int(forecast[day])]))
+                    logging.info("Day {0} : maximum temp - {1}".format(day, temperature[day]))
+                except Exception as err:
+                    logging.error("Day {0} : unknown weather type encountered - {1}".format(day, err))
+            else:
+                try:
+                    print "Day {0} : forecast - {1} - {2}".format(day, forecast[day], ICON_MAP[int(forecast[day])])
+                    print "Day {0} : maximum temp - {1}".format(day, temperature[day])
+                except Exception as err:
+                    print "Day {0} : unknown weather type encountered - {1}".format(day, err)
     else: # Use night forecast for first day if current time is equal or after 18:00
         forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][0]["Rep"][1]["W"])
         temperature.append(json_data["SiteRep"]["DV"]["Location"]["Period"][0]["Rep"][1]["Nm"])
-        for day in xrange(1, 4):
+        if LOG_TO_FILE == 'True':
+            try:
+                logging.info("Night {0} : forecast - {1} - {2}".format(0, forecast[0], ICON_MAP[int(forecast[0])]))
+                logging.info("Night {0} : minimum temp - {1}".format(0, temperature[0]))
+            except Exception as err:
+                logging.error("Night {0} : unknown weather type encountered - {1}".format(0, err))
+        else:
+            try:
+                print "Night {0} : forecast - {1} - {2}".format(0, forecast[0], ICON_MAP[int(forecast[0])])
+                print "Night {0} : minimum temp - {1}".format(0, temperature[0])
+            except Exception as err:
+                print "Night {0} : unknown weather type encountered - {1}".format(0, err)
+                
+        for day in xrange(1, 4): # Need to then get the next three days' forecast
             forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["W"])
             temperature.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["Dm"])
+            if LOG_TO_FILE == 'True':
+                try:
+                    logging.info("Day {0} : forecast - {1} - {2}".format(day, forecast[day], ICON_MAP[int(forecast[day])]))
+                    logging.info("Day {0} : maximum temp - {1}".format(day, temperature[day]))
+                except Exception as err:
+                    logging.error("Day {0} : unknown weather type encountered - {1}".format(day, err))
+            else:
+                try:
+                    print "Day {0} : forecast - {1} - {2}".format(day, forecast[day], ICON_MAP[int(forecast[day])])
+                    print "Day {0} : maximum temp - {1}".format(day, temperature[day])
+                except Exception as err:
+                    print "Day {0} : unknown weather type encountered - {1}".format(day, err)
     return forecast, temperature
-    
-def print_forecast(forecast = None, temperature = None):
-    """Print forecast to screen."""
-    if (forecast == None or temperature == None):
-        return
-    print '-'*20
-    print time.strftime('%Y/%m/%d %H:%M:%S')
-    print "Location id: {0}".format(LOCATION_ID)
-    print '-'*20
-    count = 0
-    for daily in forecast:
-        try:
-            print "Daily code:", daily
-            print "Icon: {0}".format(ICON_MAP[int(daily)])
-            print "Temperature: {0}".format(temperature[count])
-            count += 1
-        except Exception as err:
-            print "Unknown code: {0}".format(err)
 
 def display_forecast(forecast = None, temperature = None):
     """Display forecast as icons on LED 8x8 matrices."""
@@ -151,20 +203,24 @@ def display_forecast(forecast = None, temperature = None):
         for matrix in xrange(4):
             try:
                 icon = ICON_MAP[int(forecast[matrix])]
-                print "icon:", icon
-                # display.set_raw64(LED8x8ICONS[icon], matrix)
-            except:
-                print "UNKNOWN FORECAST CODE FOUND"
-                # display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
+                display.set_raw64(LED8x8ICONS[icon], matrix)
+            except Exception as err:
+                if LOG_TO_FILE == 'True':
+                    logging.error("Day {0} : unknown weather type encountered - {1}".format(matrix, err))
+                else:
+                    print "Day {0} : unknown weather type encountered - {1}".format(matrix, err)
+                display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
         time.sleep(5)
         for matrix in xrange(4):
             try:
                 value = str(temperature[matrix])
-                print "temperature:", value
-                # display.set_raw64(LED8x8ICONS[value], matrix)
-            except:
-                print "TEMPERATURE NOT FOUND"
-                # display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
+                display.set_raw64(LED8x8ICONS[value], matrix)
+            except Exception as err:
+                if LOG_TO_FILE == 'True':
+                    logging.error("Day {0} : no temperature found - {1}".format(matrix, err))
+                else:
+                    print "Day {0} : no temperature found - {1}".format(matrix, err)
+                display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
         time.sleep(5)
 
 #-------------------------------------------------------------------------------
@@ -174,7 +230,7 @@ if __name__ == "__main__":
     # Need to override buffered version of stdout to ensure sleep function works as expected (http://stackoverflow.com/questions/107705/disable-output-buffering)
     sys.stdout = Unbuffered(sys.stdout)
     read_config(CONFIG_FILE)
+    start_logging()
     while True: # Top level loop in display_forecast() dictates how often new forecast is pulled from metoffice api
         forecast, temperature = get_forecast()
-        print_forecast(forecast, temperature)
         display_forecast(forecast, temperature)
