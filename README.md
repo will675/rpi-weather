@@ -21,3 +21,13 @@ That includes the initial integration with the [**metoffice.gov.uk**](http://www
 
 ## SD Card Setup
 1. Install [raspbian-lite](https://www.raspberrypi.org/downloads/raspbian)
+2. Boot up and change pi user password from default **raspberry** - ```passwd```
+3. Create new user so can delete pi once happy all is in place - ```sudo addusr xyz```
+4. Add user to sudo - ```sudo visudo```
+5. Change default editor to vim - ```sudo update-alternatives --set editor /usr/bin/vim.tiny```
+6. Log on as new user xyz
+7. Update apt-get - ```sudo apt-get update```
+8. Install git to make it easy to get the repo in the RPi, and make/get changes as needed - ```sudo apt-get install git```
+9. Create non-sudo user to run script under, hopefully makes things more secure? - ```sudo addusr abc```
+10. Install normal vim - ```sudo apt-get install vim```
+11. 
