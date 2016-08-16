@@ -22,10 +22,10 @@ import logging
 
 from logging.handlers import TimedRotatingFileHandler
 
-# from rpi_weather import RpiWeather
-# from led8x8icons import LED8x8ICONS
+from rpi_weather import RpiWeather
+from led8x8icons import LED8x8ICONS
 
-# display = RpiWeather()
+display = RpiWeather()
 
 METOFFICE_URL    = "datapoint.metoffice.gov.uk"
 REQ_BASE    = r"/public/data/val/wxfcs/all/json/"
@@ -34,11 +34,12 @@ API_KEY = None
 LOCATION_ID = None
 LOG_FILE = None
 LOG_TO_FILE = False
+NIGHT_START = None
 
 ICON_MAP = { # Day forecast codes only
 #   Met Office weather code         LED 8x8 icon
-    # 0:                              "MOON",         # Clear night
-    # 1:                              "SUNNY",        # Sunny day
+    0:                              "MOON",         # Clear night
+    1:                              "SUNNY",        # Sunny day
     2:                              "PART_CLOUD",   # Partly cloudy (night)
     3:                              "PART_CLOUD",   # Partly cloudy (day)
     4:                              "UNKNOWN",      # Not used
@@ -83,27 +84,28 @@ class Unbuffered(object):
 
 def giveup():
     """Action to take if anything bad happens."""
-    # for matrix in xrange(4):
-        # display.set_raw64(LED8x8ICONS['UNKNOWN'],matrix)
+    for matrix in xrange(4):
+        display.set_raw64(LED8x8ICONS['UNKNOWN'],matrix)
     print "Error occured."
     sys.exit(1)
     
 def read_config(filename):
     """Get config settings"""
     config = ConfigParser.RawConfigParser()
-    global API_KEY, LOCATION_ID, LOG_FILE, LOG_TO_FILE
+    global API_KEY, LOCATION_ID, LOG_FILE, LOG_TO_FILE, NIGHT_START
     try:
         config.read(filename)
-        API_KEY = config.get('config','API_KEY')
+        API_KEY     = config.get('config','API_KEY')
         LOCATION_ID = config.get('config','LOCATION_ID')
-        LOG_FILE = config.get('config', 'LOG_FILE')
+        LOG_FILE    = config.get('config', 'LOG_FILE')
         LOG_TO_FILE = config.get('config', 'LOG_TO_FILE')
+        NIGHT_START = config.get('config', 'NIGHT_START')
     except Exception as err:
         print err
         giveup()
 
 def start_logging():
-    handler = TimedRotatingFileHandler(LOG_FILE, when='s', interval=10, backupCount=5)
+    handler = TimedRotatingFileHandler(LOG_FILE, when='d', interval=1, backupCount=5)
     formatter = logging.Formatter("%(asctime)s : %(levelname)s : %(message)s", "%Y-%m-%d %H:%M:%S")
     handler.setFormatter(formatter)
     logger = logging.getLogger()
@@ -144,7 +146,7 @@ def get_forecast():
     forecast = []
     temperature = []
     current_hour = time.localtime().tm_hour
-    if (current_hour < 1): # Use day forcast for all days if current time is before 18:00 
+    if (current_hour < int(NIGHT_START)): # Use day forcast for all days if current time is before 18:00 
         for day in xrange(4):
             forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["W"])
             temperature.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["Dm"])
@@ -176,7 +178,7 @@ def get_forecast():
             except Exception as err:
                 print "Night {0} : unknown weather type encountered - {1}".format(0, err)
                 
-        for day in xrange(1, 4):
+        for day in xrange(1, 4): # Need to then get the next three days' forecast
             forecast.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["W"])
             temperature.append(json_data["SiteRep"]["DV"]["Location"]["Period"][day]["Rep"][0]["Dm"])
             if LOG_TO_FILE == 'True':
@@ -192,24 +194,6 @@ def get_forecast():
                 except Exception as err:
                     print "Day {0} : unknown weather type encountered - {1}".format(day, err)
     return forecast, temperature
-    
-def print_forecast(forecast = None, temperature = None):
-    """Print forecast to screen."""
-    if (forecast == None or temperature == None):
-        return
-    print '-'*20
-    print time.strftime('%Y/%m/%d %H:%M:%S')
-    print "Location id: {0}".format(LOCATION_ID)
-    print '-'*20
-    count = 0
-    for daily in forecast:
-        try:
-            print "Daily code:", daily
-            print "Icon: {0}".format(ICON_MAP[int(daily)])
-            print "Temperature: {0}".format(temperature[count])
-            count += 1
-        except Exception as err:
-            print "Unknown code: {0}".format(err)
 
 def display_forecast(forecast = None, temperature = None):
     """Display forecast as icons on LED 8x8 matrices."""
@@ -219,20 +203,24 @@ def display_forecast(forecast = None, temperature = None):
         for matrix in xrange(4):
             try:
                 icon = ICON_MAP[int(forecast[matrix])]
-                print "icon:", icon
-                # display.set_raw64(LED8x8ICONS[icon], matrix)
-            except:
-                print "UNKNOWN FORECAST CODE FOUND"
-                # display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
+                display.set_raw64(LED8x8ICONS[icon], matrix)
+            except Exception as err:
+                if LOG_TO_FILE == 'True':
+                    logging.error("Day {0} : unknown weather type encountered - {1}".format(matrix, err))
+                else:
+                    print "Day {0} : unknown weather type encountered - {1}".format(matrix, err)
+                display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
         time.sleep(5)
         for matrix in xrange(4):
             try:
                 value = str(temperature[matrix])
-                print "temperature:", value
-                # display.set_raw64(LED8x8ICONS[value], matrix)
-            except:
-                print "TEMPERATURE NOT FOUND"
-                # display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
+                display.set_raw64(LED8x8ICONS[value], matrix)
+            except Exception as err:
+                if LOG_TO_FILE == 'True':
+                    logging.error("Day {0} : no temperature found - {1}".format(matrix, err))
+                else:
+                    print "Day {0} : no temperature found - {1}".format(matrix, err)
+                display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
         time.sleep(5)
 
 #-------------------------------------------------------------------------------
@@ -245,5 +233,4 @@ if __name__ == "__main__":
     start_logging()
     while True: # Top level loop in display_forecast() dictates how often new forecast is pulled from metoffice api
         forecast, temperature = get_forecast()
-        print_forecast(forecast, temperature)
         display_forecast(forecast, temperature)
