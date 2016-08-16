@@ -69,4 +69,6 @@ That includes the initial integration with the [**metoffice.gov.uk**](http://www
   *```cd Adafruit_Python_LED_Backpack```
   
   *```sudo python setup.py install```
+  
   21. Clone this repo into that same home directory for **abc**
+  22. <<SET UP SCRIPT TO RUN ON STARTUP UNDER ABC USER>>
