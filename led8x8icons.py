@@ -66,7 +66,7 @@ LED8x8ICONS = {
 'SNOW'                              : 0xa542a51818a542a5 ,
 'STORM'                             : 0x0a04087e8191710e ,
 'MOON'                              :  0xc18307030180c00 ,
-'PART_CLOUD'                        :    0xf10347c7b3000 ,
+'PART_CLOUD'                        :   0x2f10741c2b0800 ,
 'FOG'                               : 0x281038d610383810 ,
 'HAIL'                              : 0x3892c7923892c792 ,
 
