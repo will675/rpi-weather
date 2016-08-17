@@ -14,14 +14,16 @@ from led8x8icons import LED8x8ICONS
 
 display = RpiWeather()
 
-class Unbuffered(object): # Used to ensure sleep function works as expected (http://stackoverflow.com/questions/107705/disable-output-buffering)
-   def __init__(self, stream):
-       self.stream = stream
-   def write(self, data):
-       self.stream.write(data)
-       self.stream.flush()
-   def __getattr__(self, attr):
-       return getattr(self.stream, attr)
+class Unbuffered(object):
+    """Used to ensure sleep function works as expected
+    (http://stackoverflow.com/questions/107705/disable-output-buffering)"""
+    def __init__(self, stream):
+        self.stream = stream
+    def write(self, data):
+        self.stream.write(data)
+        self.stream.flush()
+    def __getattr__(self, attr):
+        return getattr(self.stream, attr)
 
 def display_numbers(top=None):
     """Display numbers up to top value on LED 8x8 matrices."""

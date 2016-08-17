@@ -15,7 +15,8 @@ That includes the initial integration with the [**metoffice.gov.uk**](http://www
 - [X] New weather type elements to ICON_MAP
 - [X] Night-time weather and minimum temp for current day
 - [X] Logging to file
-- [ ] Negative numeric elements to ICON_MAP
+- [X] Negative numeric elements to ICON_MAP
+- [ ] Move logging and printing to console to separate function that takes level and string
 - [ ] Full setup notes for going from a blank SD card to a fully working rpi-weather config (so should I brick it somehow I don't have to hunt around to set it all up again...)
 - [ ] BDD style tests (so I can learn [Behave](http://pythonhosted.org/behave), the Python version of Cucumber)
 - [ ] Integrate with Travis to see if I can (overkill, anyone...?)

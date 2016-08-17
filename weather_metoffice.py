@@ -105,6 +105,7 @@ def read_config(filename):
         giveup()
 
 def start_logging():
+    """Generate log file using TimedRotatingFileHandler() and record the starting datetime of the script run"""
     handler = TimedRotatingFileHandler(LOG_FILE, when='d', interval=1, backupCount=5)
     formatter = logging.Formatter("%(asctime)s : %(levelname)s : %(message)s", "%Y-%m-%d %H:%M:%S")
     handler.setFormatter(formatter)
@@ -116,7 +117,7 @@ def start_logging():
     logging.info('-'*35)
         
 def make_metoffice_request():
-    """Make request to metoffice.gov.uk and return data."""
+    """Make request to metoffice.gov.uk and return data.  Logs response status to file"""
     REQUEST = REQ_BASE + format(LOCATION_ID) + "?res=daily&key=" + API_KEY
     try:
         conn = httplib.HTTPConnection(METOFFICE_URL)
@@ -141,7 +142,8 @@ def make_metoffice_request():
         return data
     
 def get_forecast():
-    """Return a list of forecast results."""
+    """Return a list of forecast results. Logs forecast and temp values for each day to file, 
+    as well as any unknown values encountered."""
     json_data = json.loads(make_metoffice_request())
     forecast = []
     temperature = []
