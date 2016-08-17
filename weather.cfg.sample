@@ -1,0 +1,6 @@
+[config]
+API_KEY = <<YOUR_API_KEY_HERE>>
+LOCATION_ID = <<YOUR_LOCATION_ID_HERE>>
+LOG_FILE = weather.log
+LOG_TO_FILE = True
+NIGHT_START = 18
