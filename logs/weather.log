@@ -1,0 +1,48 @@
+2016-08-18 05:56:14 : INFO : -----------------------------------
+2016-08-18 05:56:14 : INFO : Script started: 2016/08/18 05:56:14
+2016-08-18 05:56:14 : INFO : -----------------------------------
+2016-08-18 05:56:14 : INFO : 200 status returned by api
+2016-08-18 05:56:14 : INFO : Day 0 : forecast - 7 - CLOUD
+2016-08-18 05:56:14 : INFO : Day 0 : maximum temp - 23
+2016-08-18 05:56:14 : INFO : Day 1 : forecast - 15 - RAIN
+2016-08-18 05:56:14 : INFO : Day 1 : maximum temp - 19
+2016-08-18 05:56:14 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-08-18 05:56:14 : INFO : Day 2 : maximum temp - 19
+2016-08-18 05:56:14 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-08-18 05:56:14 : INFO : Day 3 : maximum temp - 20
+2016-08-18 05:58:10 : INFO : -----------------------------------
+2016-08-18 05:58:10 : INFO : Script started: 2016/08/18 05:58:10
+2016-08-18 05:58:10 : INFO : -----------------------------------
+2016-08-18 05:58:10 : INFO : 200 status returned by api
+2016-08-18 05:58:10 : INFO : Day 0 : forecast - 7 - CLOUD
+2016-08-18 05:58:10 : INFO : Day 0 : maximum temp - 23
+2016-08-18 05:58:10 : INFO : Day 1 : forecast - 15 - RAIN
+2016-08-18 05:58:10 : INFO : Day 1 : maximum temp - 19
+2016-08-18 05:58:10 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-08-18 05:58:10 : INFO : Day 2 : maximum temp - 19
+2016-08-18 05:58:10 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-08-18 05:58:10 : INFO : Day 3 : maximum temp - 20
+2016-08-18 05:59:02 : INFO : -----------------------------------
+2016-08-18 05:59:02 : INFO : Script started: 2016/08/18 05:59:02
+2016-08-18 05:59:02 : INFO : -----------------------------------
+2016-08-18 05:59:03 : INFO : 200 status returned by api
+2016-08-18 05:59:03 : INFO : Day 0 : forecast - 7 - CLOUD
+2016-08-18 05:59:03 : INFO : Day 0 : maximum temp - 23
+2016-08-18 05:59:03 : INFO : Day 1 : forecast - 15 - RAIN
+2016-08-18 05:59:03 : INFO : Day 1 : maximum temp - 19
+2016-08-18 05:59:03 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-08-18 05:59:03 : INFO : Day 2 : maximum temp - 19
+2016-08-18 05:59:03 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-08-18 05:59:03 : INFO : Day 3 : maximum temp - 20
+2016-08-18 06:00:25 : INFO : -----------------------------------
+2016-08-18 06:00:25 : INFO : Script started: 2016/08/18 06:00:25
+2016-08-18 06:00:25 : INFO : -----------------------------------
+2016-08-18 06:00:25 : INFO : 200 status returned by api
+2016-08-18 06:00:25 : INFO : Day 0 : forecast - 7 - CLOUD
+2016-08-18 06:00:25 : INFO : Day 0 : maximum temp - 23
+2016-08-18 06:00:25 : INFO : Day 1 : forecast - 15 - RAIN
+2016-08-18 06:00:25 : INFO : Day 1 : maximum temp - 19
+2016-08-18 06:00:25 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-08-18 06:00:25 : INFO : Day 2 : maximum temp - 19
+2016-08-18 06:00:25 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-08-18 06:00:25 : INFO : Day 3 : maximum temp - 20
