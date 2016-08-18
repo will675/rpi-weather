@@ -33,6 +33,7 @@ CONFIG_FILE = "weather.cfg"
 API_KEY = None
 LOCATION_ID = None
 LOG_FILE = None
+LOG_LEVEL = None
 LOG_TO_FILE = False
 NIGHT_START = None
 
@@ -92,12 +93,13 @@ def giveup():
 def read_config(filename):
     """Get config settings"""
     config = ConfigParser.RawConfigParser()
-    global API_KEY, LOCATION_ID, LOG_FILE, LOG_TO_FILE, NIGHT_START
+    global API_KEY, LOCATION_ID, LOG_FILE, LOG_LEVEL, LOG_TO_FILE, NIGHT_START
     try:
         config.read(filename)
         API_KEY     = config.get('config','API_KEY')
         LOCATION_ID = config.get('config','LOCATION_ID')
         LOG_FILE    = config.get('config', 'LOG_FILE')
+        LOG_LEVEL    = config.get('config', 'LOG_LEVEL')
         LOG_TO_FILE = config.get('config', 'LOG_TO_FILE')
         NIGHT_START = config.get('config', 'NIGHT_START')
     except Exception as err:
@@ -110,7 +112,13 @@ def start_logging():
     formatter = logging.Formatter("%(asctime)s : %(levelname)s : %(message)s", "%Y-%m-%d %H:%M:%S")
     handler.setFormatter(formatter)
     logger = logging.getLogger()
-    logger.setLevel(logging.DEBUG)
+    if LOG_LEVEL == 'Info':
+    	logger.setLevel(logging.INFO)
+    elif LOG_LEVEL == 'Debug':
+	logger.setLevel(logging.DEBUG)
+    else:
+    	print "Invalid LOG_LEVEL set: {0}".format(LOG_LEVEL)
+	giveup()
     logger.addHandler(handler)
     logging.info('-'*35)
     logging.info("Script started: {0}".format(time.strftime('%Y/%m/%d %H:%M:%S')))
@@ -211,7 +219,6 @@ def display_forecast(forecast = None, temperature = None):
                     logging.error("Day {0} : unknown weather type encountered - {1}".format(matrix, err))
                 else:
                     print "Day {0} : unknown weather type encountered - {1}".format(matrix, err)
-                print "ICON MATRIX VALUE: {0}".format(matrix)
                 display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
         time.sleep(5)
         for matrix in xrange(4):
@@ -223,7 +230,6 @@ def display_forecast(forecast = None, temperature = None):
                     logging.error("Day {0} : no temperature found - {1}".format(matrix, err))
                 else:
                     print "Day {0} : no temperature found - {1}".format(matrix, err)
-                print "TEMP MATRIX VALUE: {0}".format(matrix)
                 display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
         time.sleep(5)
 
