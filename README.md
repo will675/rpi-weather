@@ -17,6 +17,7 @@ That includes the initial integration with the [**metoffice.gov.uk**](http://www
 - [X] Logging to file
 - [X] Negative numeric elements to ICON_MAP
 - [ ] Move logging and printing to console to separate function that takes level and string
+- [ ] Set RPi up to automatically login as specific user and run script from start (with minimal rights/permissions in place)
 - [ ] Full setup notes for going from a blank SD card to a fully working rpi-weather config (so should I brick it somehow I don't have to hunt around to set it all up again...)
 - [ ] Wipe my SD card and try the notes below, to check if they are correct
 
@@ -54,7 +55,7 @@ That includes the initial integration with the [**metoffice.gov.uk**](http://www
   
   *```sudo raspi-config```
 18. Restart the RPi - ```sudo restart -h now```
-19. Connect up the LED matices and check i2c is up and running - ```sudo i2cdetect -y 0``` (**Using 256Mb Model A RPi so need ```0``` on end, rather than ```1``` for subsequent models**
+19. Connect up the LED matices and check i2c is up and running - ```sudo i2cdetect -y 0``` (**Using 256Mb Model A RPi so need ```0``` on end, rather than ```1``` for subsequent models**)
 20. Install the adafruit LED backpack library (as described [here](https://learn.adafruit.com/led-backpack-displays-on-raspberry-pi-and-beaglebone-black/usage)) :
 
   *```sudo apt-get update```
@@ -70,4 +71,4 @@ That includes the initial integration with the [**metoffice.gov.uk**](http://www
   *```sudo python setup.py install```
   
   21. Clone this repo into that same home directory for **abc**
-  22. <<SET UP SCRIPT TO RUN ON STARTUP UNDER ABC USER>>
+  22. [SET UP SCRIPT TO RUN ON STARTUP UNDER ABC USER]
