@@ -211,6 +211,7 @@ def display_forecast(forecast = None, temperature = None):
                     logging.error("Day {0} : unknown weather type encountered - {1}".format(matrix, err))
                 else:
                     print "Day {0} : unknown weather type encountered - {1}".format(matrix, err)
+                print "ICON MATRIX VALUE: {0}".format(matrix)
                 display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
         time.sleep(5)
         for matrix in xrange(4):
@@ -222,6 +223,7 @@ def display_forecast(forecast = None, temperature = None):
                     logging.error("Day {0} : no temperature found - {1}".format(matrix, err))
                 else:
                     print "Day {0} : no temperature found - {1}".format(matrix, err)
+                print "TEMP MATRIX VALUE: {0}".format(matrix)
                 display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
         time.sleep(5)
 
