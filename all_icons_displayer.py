@@ -35,10 +35,10 @@ def display_all_icons():
     print number_of_icons
     for i in xrange(number_of_icons):
         display.clear_disp()
-        for matrix in xrange(number_of_icons):
+        for matrix in xrange(4):
             try:
                 print "key: {0} - value: {1}".format(LED8x8ICONS.keys()[matrix], LED8x8ICONS.values()[matrix])
-                display.set_raw64(LED8x8ICONS[str()], matrix)
+                display.set_raw64(LED8x8ICONS.values()[matrix], matrix)
             except:
                 print "NUMBER NOT KNOWN"
                 display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
