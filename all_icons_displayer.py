@@ -32,13 +32,16 @@ def display_all_icons():
     """Display all icons in the led8x8icons dictionary"""
     display.clear_disp()
     number_of_icons = len(LED8x8ICONS)
+    sorted_icons = sorted(LED8x8ICONS)
     print number_of_icons
+    print sorted_icons
     for i in xrange(number_of_icons):
         display.clear_disp()
         for matrix in xrange(4):
             try:
-                print "key: {0} - value: {1}".format(LED8x8ICONS.keys()[matrix], LED8x8ICONS.values()[matrix])
-                display.set_raw64(LED8x8ICONS.values()[matrix], matrix)
+                icon_key = sorted_icons[i]
+                print "value: {0}".format(LED8x8ICONS[icon_key])
+                display.set_raw64(LED8x8ICONS[icon_key], matrix)
             except:
                 print "NUMBER NOT KNOWN"
                 display.set_raw64(LED8x8ICONS["UNKNOWN"], matrix)
