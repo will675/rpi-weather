@@ -17,7 +17,7 @@ That includes the initial integration with the [**metoffice.gov.uk**](http://www
 - [X] Logging to file
 - [X] Negative numeric elements to ICON_MAP
 - [ ] Move logging and printing to console to separate function that takes level and string
-- [ ] Set RPi up to automatically login as specific user and run script from start (with minimal rights/permissions in place)
+- [ ] Set RPi up to automatically run script from start via init.d
 - [ ] Full setup notes for going from a blank SD card to a fully working rpi-weather config (so should I brick it somehow I don't have to hunt around to set it all up again...)
 - [ ] Wipe my SD card and try the notes below, to check if they are correct
 
@@ -71,4 +71,9 @@ That includes the initial integration with the [**metoffice.gov.uk**](http://www
   *```sudo python setup.py install```
   
   21. Clone this repo into that same home directory for **abc**
-  22. [SET UP SCRIPT TO RUN ON STARTUP UNDER ABC USER]
+  ### init.d Setup
+  (All figured out using the very helpful details from [here](http://raspberrywebserver.com/serveradmin/run-a-script-on-start-up.html)
+  22. Copy the **weather** script from ```./etc/init.d/``` into ```/etc/init.d/``` - ```sudo cp etc/init.d/weather /etc/init.d/```
+  23. Check that the script works by calling it to start the service - ```sudo /etc/init.d/weather start```
+  24. Stop it using ```sudo /etc/init.d/weather stop```
+  25. Run this command to make it start on bootup - ```sudo update-rc.d weather defaults```
