@@ -29,7 +29,7 @@ display = RpiWeather()
 
 METOFFICE_URL    = "datapoint.metoffice.gov.uk"
 REQ_BASE    = r"/public/data/val/wxfcs/all/json/"
-CONFIG_FILE = "weather.cfg"
+CONFIG_FILE = "/home/weather/rpi-weather/weather.cfg"
 API_KEY = None
 LOCATION_ID = None
 LOG_FILE = None

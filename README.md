@@ -46,7 +46,7 @@ That includes the initial integration with the [**metoffice.gov.uk**](http://www
   *```sudo vim /etc/hostname```
   
   *```sudo /etc/init.d/hostename.sh```
-16. Restart the RPi - ```sudo restart -h now```
+16. Restart the RPi - ```sudo shutdown -r now```
 17. Configure i2c to work on the RPi (as detailed [here](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c)):
 
   *```sudo apt-get install python-smbus```
@@ -54,7 +54,7 @@ That includes the initial integration with the [**metoffice.gov.uk**](http://www
   *```sudo apt-get install i2c-tools```
   
   *```sudo raspi-config```
-18. Restart the RPi - ```sudo restart -h now```
+18. Restart the RPi - ```sudo shutdown -r now```
 19. Connect up the LED matices and check i2c is up and running - ```sudo i2cdetect -y 0``` (**Using 256Mb Model A RPi so need ```0``` on end, rather than ```1``` for subsequent models**)
 20. Install the adafruit LED backpack library (as described [here](https://learn.adafruit.com/led-backpack-displays-on-raspberry-pi-and-beaglebone-black/usage)) :
 
@@ -71,9 +71,7 @@ That includes the initial integration with the [**metoffice.gov.uk**](http://www
   *```sudo python setup.py install```
   
   21. Clone this repo into that same home directory for **abc**
-  ### init.d Setup
-  (All figured out using the very helpful details from [here](http://raspberrywebserver.com/serveradmin/run-a-script-on-start-up.html)
-  22. Copy the **weather** script from ```./etc/init.d/``` into ```/etc/init.d/``` - ```sudo cp etc/init.d/weather /etc/init.d/```
-  23. Check that the script works by calling it to start the service - ```sudo /etc/init.d/weather start```
-  24. Stop it using ```sudo /etc/init.d/weather stop```
-  25. Run this command to make it start on bootup - ```sudo update-rc.d weather defaults```
+  22. To get this script to run on startup edit rc.local - ```sudo vim /etc/rc.local```
+  23. Add the following line before the ```exit 0``` line - ```python /home/weather/rpi-weather/weather_metoffice.py &```
+  24. Restart the RaspberryPi and the displays should start showing the weather automatically - ```sudo shutdown -r now```
+  
