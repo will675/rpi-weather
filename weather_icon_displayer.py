@@ -38,7 +38,7 @@ def display_icons():
         for matrix in xrange(4):
             try:
                 icon_key = icon_list[i]
-                print "key: {0}     - value: {0}".format(icon_key, icon_list[icon_key])
+                print "key: {0}     - value: {1}".format(icon_key, LED8x8ICONS[icon_key])
                 display.set_raw64(LED8x8ICONS[icon_key], matrix)
             except:
                 print "NUMBER NOT KNOWN"
