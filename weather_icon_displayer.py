@@ -50,4 +50,4 @@ def display_icons():
 #-------------------------------------------------------------------------------
 if __name__ == "__main__":
     sys.stdout = Unbuffered(sys.stdout)
-    display_all_icons()
+    display_icons()
