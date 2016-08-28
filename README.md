@@ -16,9 +16,8 @@ That includes the initial integration with the [**metoffice.gov.uk**](http://www
 - [X] Night-time weather and minimum temp for current day
 - [X] Logging to file
 - [X] Negative numeric elements to ICON_MAP
-- [ ] Move logging and printing to console to separate function that takes level and string
-- [ ] Set RPi up to automatically run script from start via init.d
-- [ ] Full setup notes for going from a blank SD card to a fully working rpi-weather config (so should I brick it somehow I don't have to hunt around to set it all up again...)
+- [X] Set RPi up to automatically run script from start via init.d
+- [X] Full setup notes for going from a blank SD card to a fully working rpi-weather config (so should I brick it somehow I don't have to hunt around to set it all up again...)
 - [ ] Wipe my SD card and try the notes below, to check if they are correct
 
 ## SD Card Setup
@@ -64,7 +63,7 @@ That includes the initial integration with the [**metoffice.gov.uk**](http://www
   
   *Navigate to home directory for new non-sudo user account **abc**
   
-  *``git clone https://github.com/adafruit/Adafruit_Python_LED_Backpack.git``
+  *```git clone https://github.com/adafruit/Adafruit_Python_LED_Backpack.git```
   
   *```cd Adafruit_Python_LED_Backpack```
   
