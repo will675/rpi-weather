@@ -6,7 +6,7 @@ import ConfigParser
 
 METOFFICE_URL    = "datapoint.metoffice.gov.uk"
 REQ_BASE    = r"/public/data/val/wxfcs/all/json/"
-CONFIG_FILE = "../weather.cfg"
+CONFIG_FILE = "./weather.cfg"
 API_KEY = None
 LOCATION_ID = None
 
@@ -77,6 +77,8 @@ def make_metoffice_request():
         conn = httplib.HTTPConnection(METOFFICE_URL)
         conn.request("GET", REQUEST)
         resp = conn.getresponse()
+        global status
+        status = resp.status
         data = resp.read()
     except Exception as err:
         print err
