@@ -22,6 +22,7 @@ class RpiWeather():
         self.matrix.append(Matrix8x8.Matrix8x8(address=0x73, busnum=0))
         for m in self.matrix:
             m.begin()
+            m.set_brightness(0)
           
     def is_valid_matrix(self, matrix):
         """Returns True if matrix number is valid, otherwise False."""
