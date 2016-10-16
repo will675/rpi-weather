@@ -77,8 +77,9 @@ def make_metoffice_request():
         conn = httplib.HTTPConnection(METOFFICE_URL)
         conn.request("GET", REQUEST)
         resp = conn.getresponse()
+        global status
+        status = resp.status
         data = resp.read()
-	print resp.reason
     except Exception as err:
         print err
         giveup()
