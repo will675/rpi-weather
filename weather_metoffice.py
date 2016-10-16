@@ -4,7 +4,7 @@
 #
 # Get weather forecast from the Met Office and display as 8x8 icons
 #   * Met Office's doc: http://www.metoffice.gov.uk/datapoint/support/api-reference
-#   * Retrieve location id from: http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/sitelist?key=2a26370d-c529-496c-8d9d-7c7b8468e379
+#   * Retrieve location id from: http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/sitelist?key=<api-key>
 #   * Uses 'UK daily site specific forecast'
 #   * Need to have an API key from Met Office: https://register.metoffice.gov.uk/WaveRegistrationClient/public/register.do?service=datapoint
 #
@@ -135,8 +135,10 @@ def make_metoffice_request():
         if resp.status != 200:
             if LOG_TO_FILE == 'True':
                 logging.error("Non-200 status returned by api: {}".format(resp.status))
+		logging.error("Request: {}".format(REQUEST))
             else:
                 print "Non-200 status returned by api: {}".format(resp.status)
+		print "Request: {}".format(REQUEST)
             giveup()
         else:
             if LOG_TO_FILE == 'True':
@@ -209,7 +211,7 @@ def display_forecast(forecast = None, temperature = None):
     """Display forecast as icons on LED 8x8 matrices."""
     if (forecast == None or temperature == None):
         return
-    for turns in xrange(360): # This will loop the current forecast and temp for about an hour before going to get latest from met office
+    for turns in xrange(2): # This will loop the current forecast and temp for about an hour before going to get latest from met office
         for matrix in xrange(4):
             try:
                 icon = ICON_MAP[int(forecast[matrix])]
