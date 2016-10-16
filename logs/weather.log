@@ -11637,3 +11637,723 @@
 2016-10-16 06:18:07 : INFO : Day 2 : maximum temp - 11
 2016-10-16 06:18:07 : INFO : Day 3 : forecast - 7 - CLOUD
 2016-10-16 06:18:07 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:18:27 : INFO : 200 status returned by api
+2016-10-16 06:18:27 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:18:27 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:18:27 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:18:27 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:18:27 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:18:27 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:18:27 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:18:27 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:18:48 : INFO : 200 status returned by api
+2016-10-16 06:18:48 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:18:48 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:18:48 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:18:48 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:18:48 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:18:48 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:18:48 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:18:48 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:19:08 : INFO : 200 status returned by api
+2016-10-16 06:19:08 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:19:08 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:19:08 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:19:08 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:19:08 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:19:08 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:19:08 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:19:08 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:19:29 : INFO : 200 status returned by api
+2016-10-16 06:19:29 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:19:29 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:19:29 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:19:29 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:19:29 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:19:29 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:19:29 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:19:29 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:19:49 : INFO : 200 status returned by api
+2016-10-16 06:19:49 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:19:49 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:19:49 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:19:49 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:19:49 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:19:49 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:19:49 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:19:49 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:20:10 : INFO : 200 status returned by api
+2016-10-16 06:20:10 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:20:10 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:20:10 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:20:10 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:20:10 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:20:10 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:20:10 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:20:10 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:20:30 : INFO : 200 status returned by api
+2016-10-16 06:20:30 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:20:30 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:20:30 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:20:30 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:20:30 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:20:30 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:20:30 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:20:30 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:20:51 : INFO : 200 status returned by api
+2016-10-16 06:20:51 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:20:51 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:20:51 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:20:51 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:20:51 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:20:51 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:20:51 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:20:51 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:21:11 : INFO : 200 status returned by api
+2016-10-16 06:21:11 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:21:11 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:21:11 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:21:11 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:21:11 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:21:11 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:21:11 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:21:11 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:21:32 : INFO : 200 status returned by api
+2016-10-16 06:21:32 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:21:32 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:21:32 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:21:32 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:21:32 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:21:32 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:21:32 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:21:32 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:21:52 : INFO : 200 status returned by api
+2016-10-16 06:21:52 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:21:52 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:21:52 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:21:52 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:21:52 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:21:52 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:21:52 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:21:52 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:22:13 : INFO : 200 status returned by api
+2016-10-16 06:22:13 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:22:13 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:22:13 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:22:13 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:22:13 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:22:13 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:22:13 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:22:13 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:22:33 : INFO : 200 status returned by api
+2016-10-16 06:22:33 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:22:33 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:22:33 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:22:33 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:22:33 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:22:33 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:22:33 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:22:33 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:22:54 : INFO : 200 status returned by api
+2016-10-16 06:22:54 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:22:54 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:22:54 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:22:54 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:22:54 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:22:54 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:22:54 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:22:54 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:23:14 : INFO : 200 status returned by api
+2016-10-16 06:23:14 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:23:14 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:23:14 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:23:14 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:23:14 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:23:14 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:23:14 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:23:14 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:23:35 : INFO : 200 status returned by api
+2016-10-16 06:23:35 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:23:35 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:23:35 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:23:35 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:23:35 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:23:35 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:23:35 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:23:35 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:23:55 : INFO : 200 status returned by api
+2016-10-16 06:23:55 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:23:55 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:23:55 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:23:55 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:23:55 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:23:55 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:23:55 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:23:55 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:24:15 : INFO : 200 status returned by api
+2016-10-16 06:24:15 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:24:15 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:24:15 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:24:15 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:24:15 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:24:15 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:24:15 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:24:15 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:24:36 : INFO : 200 status returned by api
+2016-10-16 06:24:36 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:24:36 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:24:36 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:24:36 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:24:36 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:24:36 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:24:36 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:24:36 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:24:56 : INFO : 200 status returned by api
+2016-10-16 06:24:56 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:24:56 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:24:56 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:24:56 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:24:56 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:24:56 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:24:56 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:24:56 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:25:17 : INFO : 200 status returned by api
+2016-10-16 06:25:17 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:25:17 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:25:17 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:25:17 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:25:17 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:25:17 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:25:17 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:25:17 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:25:38 : INFO : 200 status returned by api
+2016-10-16 06:25:38 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:25:38 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:25:38 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:25:38 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:25:38 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:25:38 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:25:38 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:25:38 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:25:58 : INFO : 200 status returned by api
+2016-10-16 06:25:58 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:25:58 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:25:58 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:25:58 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:25:58 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:25:58 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:25:58 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:25:58 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:26:19 : INFO : 200 status returned by api
+2016-10-16 06:26:19 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:26:19 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:26:19 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:26:19 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:26:19 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:26:19 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:26:19 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:26:19 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:26:40 : INFO : 200 status returned by api
+2016-10-16 06:26:40 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:26:40 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:26:40 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:26:40 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:26:40 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:26:40 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:26:40 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:26:40 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:27:00 : INFO : 200 status returned by api
+2016-10-16 06:27:00 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:27:00 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:27:00 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:27:00 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:27:00 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:27:00 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:27:00 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:27:00 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:27:21 : INFO : 200 status returned by api
+2016-10-16 06:27:21 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:27:21 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:27:21 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:27:21 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:27:21 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:27:21 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:27:21 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:27:21 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:27:42 : INFO : 200 status returned by api
+2016-10-16 06:27:42 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:27:42 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:27:42 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:27:42 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:27:42 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:27:42 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:27:42 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:27:42 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:28:02 : INFO : 200 status returned by api
+2016-10-16 06:28:02 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:28:02 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:28:02 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:28:02 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:28:02 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:28:02 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:28:02 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:28:02 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:28:23 : INFO : 200 status returned by api
+2016-10-16 06:28:23 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:28:23 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:28:23 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:28:23 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:28:23 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:28:23 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:28:23 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:28:23 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:28:43 : INFO : 200 status returned by api
+2016-10-16 06:28:43 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:28:43 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:28:43 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:28:43 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:28:43 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:28:43 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:28:43 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:28:43 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:29:04 : INFO : 200 status returned by api
+2016-10-16 06:29:04 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:29:04 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:29:04 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:29:04 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:29:04 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:29:04 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:29:04 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:29:04 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:29:24 : INFO : 200 status returned by api
+2016-10-16 06:29:24 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:29:24 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:29:24 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:29:24 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:29:24 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:29:24 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:29:24 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:29:24 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:29:45 : INFO : 200 status returned by api
+2016-10-16 06:29:45 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:29:45 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:29:45 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:29:45 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:29:45 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:29:45 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:29:45 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:29:45 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:30:05 : INFO : 200 status returned by api
+2016-10-16 06:30:05 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:30:05 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:30:05 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:30:05 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:30:05 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:30:05 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:30:05 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:30:05 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:30:26 : INFO : 200 status returned by api
+2016-10-16 06:30:26 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:30:26 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:30:26 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:30:26 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:30:26 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:30:26 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:30:26 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:30:26 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:30:46 : INFO : 200 status returned by api
+2016-10-16 06:30:46 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:30:46 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:30:46 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:30:46 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:30:46 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:30:46 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:30:46 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:30:46 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:31:07 : INFO : 200 status returned by api
+2016-10-16 06:31:07 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:31:07 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:31:07 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:31:07 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:31:07 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:31:07 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:31:07 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:31:07 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:31:27 : INFO : 200 status returned by api
+2016-10-16 06:31:27 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:31:27 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:31:27 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:31:27 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:31:27 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:31:27 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:31:27 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:31:27 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:31:48 : INFO : 200 status returned by api
+2016-10-16 06:31:48 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:31:48 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:31:48 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:31:48 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:31:48 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:31:48 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:31:48 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:31:48 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:32:08 : INFO : 200 status returned by api
+2016-10-16 06:32:08 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:32:08 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:32:08 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:32:08 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:32:08 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:32:08 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:32:08 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:32:08 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:32:29 : INFO : 200 status returned by api
+2016-10-16 06:32:29 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:32:29 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:32:29 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:32:29 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:32:29 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:32:29 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:32:29 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:32:29 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:32:49 : INFO : 200 status returned by api
+2016-10-16 06:32:49 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:32:49 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:32:49 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:32:49 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:32:49 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:32:49 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:32:49 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:32:49 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:33:10 : INFO : 200 status returned by api
+2016-10-16 06:33:10 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:33:10 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:33:10 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:33:10 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:33:10 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:33:10 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:33:10 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:33:10 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:33:30 : INFO : 200 status returned by api
+2016-10-16 06:33:30 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:33:30 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:33:30 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:33:30 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:33:30 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:33:30 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:33:30 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:33:30 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:33:51 : INFO : 200 status returned by api
+2016-10-16 06:33:51 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:33:51 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:33:51 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:33:51 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:33:51 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:33:51 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:33:51 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:33:51 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:34:11 : INFO : 200 status returned by api
+2016-10-16 06:34:11 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:34:11 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:34:11 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:34:11 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:34:11 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:34:11 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:34:11 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:34:11 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:34:31 : INFO : 200 status returned by api
+2016-10-16 06:34:32 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:34:32 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:34:32 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:34:32 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:34:32 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:34:32 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:34:32 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:34:32 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:34:52 : INFO : 200 status returned by api
+2016-10-16 06:34:52 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:34:52 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:34:52 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:34:52 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:34:52 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:34:52 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:34:52 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:34:52 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:35:13 : INFO : 200 status returned by api
+2016-10-16 06:35:13 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:35:13 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:35:13 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:35:13 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:35:13 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:35:13 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:35:13 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:35:13 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:35:33 : INFO : 200 status returned by api
+2016-10-16 06:35:33 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:35:33 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:35:33 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:35:33 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:35:33 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:35:33 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:35:33 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:35:33 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:35:53 : INFO : 200 status returned by api
+2016-10-16 06:35:54 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:35:54 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:35:54 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:35:54 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:35:54 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:35:54 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:35:54 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:35:54 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:36:14 : INFO : 200 status returned by api
+2016-10-16 06:36:14 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:36:14 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:36:14 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:36:14 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:36:14 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:36:14 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:36:14 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:36:14 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:36:34 : INFO : 200 status returned by api
+2016-10-16 06:36:34 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:36:34 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:36:34 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:36:34 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:36:34 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:36:34 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:36:34 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:36:34 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:36:55 : INFO : 200 status returned by api
+2016-10-16 06:36:55 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:36:55 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:36:55 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:36:55 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:36:55 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:36:55 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:36:55 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:36:55 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:37:15 : INFO : 200 status returned by api
+2016-10-16 06:37:15 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:37:15 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:37:15 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:37:15 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:37:15 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:37:15 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:37:15 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:37:15 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:37:36 : INFO : 200 status returned by api
+2016-10-16 06:37:36 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:37:36 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:37:36 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:37:36 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:37:36 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:37:36 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:37:36 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:37:36 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:37:56 : INFO : 200 status returned by api
+2016-10-16 06:37:56 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:37:56 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:37:56 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:37:56 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:37:56 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:37:56 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:37:56 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:37:56 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:38:17 : INFO : 200 status returned by api
+2016-10-16 06:38:17 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:38:17 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:38:17 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:38:17 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:38:17 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:38:17 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:38:17 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:38:17 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:38:37 : INFO : 200 status returned by api
+2016-10-16 06:38:37 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:38:37 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:38:37 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:38:37 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:38:37 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:38:37 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:38:37 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:38:37 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:38:58 : INFO : 200 status returned by api
+2016-10-16 06:38:58 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:38:58 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:38:58 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:38:58 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:38:58 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:38:58 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:38:58 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:38:58 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:39:18 : INFO : 200 status returned by api
+2016-10-16 06:39:18 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:39:18 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:39:18 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:39:18 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:39:18 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:39:18 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:39:18 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:39:18 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:39:39 : INFO : 200 status returned by api
+2016-10-16 06:39:39 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:39:39 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:39:39 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:39:39 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:39:39 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:39:39 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:39:39 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:39:39 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:40:00 : INFO : 200 status returned by api
+2016-10-16 06:40:00 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:40:00 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:40:00 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:40:00 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:40:00 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:40:00 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:40:00 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:40:00 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:40:20 : INFO : 200 status returned by api
+2016-10-16 06:40:20 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:40:20 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:40:20 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:40:20 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:40:20 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:40:20 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:40:20 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:40:20 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:40:41 : INFO : 200 status returned by api
+2016-10-16 06:40:41 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:40:41 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:40:41 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:40:41 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:40:41 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:40:41 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:40:41 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:40:41 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:41:01 : INFO : 200 status returned by api
+2016-10-16 06:41:01 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:41:01 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:41:01 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:41:01 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:41:01 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:41:01 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:41:01 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:41:01 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:41:22 : INFO : 200 status returned by api
+2016-10-16 06:41:22 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:41:22 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:41:22 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:41:22 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:41:22 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:41:22 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:41:22 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:41:22 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:41:43 : INFO : 200 status returned by api
+2016-10-16 06:41:43 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:41:43 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:41:43 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:41:43 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:41:43 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:41:43 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:41:43 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:41:43 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:42:03 : INFO : 200 status returned by api
+2016-10-16 06:42:03 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:42:03 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:42:03 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:42:03 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:42:03 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:42:03 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:42:03 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:42:03 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:42:24 : INFO : 200 status returned by api
+2016-10-16 06:42:24 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:42:24 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:42:24 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:42:24 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:42:24 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:42:24 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:42:24 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:42:24 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:42:44 : INFO : 200 status returned by api
+2016-10-16 06:42:44 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:42:44 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:42:44 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:42:44 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:42:44 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:42:44 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:42:44 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:42:44 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:43:05 : INFO : 200 status returned by api
+2016-10-16 06:43:05 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:43:05 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:43:05 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:43:05 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:43:05 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:43:05 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:43:05 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:43:05 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:43:25 : INFO : 200 status returned by api
+2016-10-16 06:43:25 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:43:25 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:43:25 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:43:25 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:43:25 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:43:25 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:43:25 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:43:25 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:43:46 : INFO : 200 status returned by api
+2016-10-16 06:43:46 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:43:46 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:43:46 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:43:46 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:43:46 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:43:46 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:43:46 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:43:46 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:44:06 : INFO : 200 status returned by api
+2016-10-16 06:44:06 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:44:06 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:44:06 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:44:06 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:44:06 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:44:06 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:44:06 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:44:06 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:44:27 : INFO : 200 status returned by api
+2016-10-16 06:44:27 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:44:27 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:44:27 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:44:27 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:44:27 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:44:27 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:44:27 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:44:27 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:44:47 : INFO : 200 status returned by api
+2016-10-16 06:44:47 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:44:47 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:44:47 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:44:47 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:44:47 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:44:47 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:44:47 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:44:47 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:45:08 : INFO : 200 status returned by api
+2016-10-16 06:45:08 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:45:08 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:45:08 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:45:08 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:45:08 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:45:08 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:45:08 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:45:08 : INFO : Day 3 : maximum temp - 12
+2016-10-16 06:45:28 : INFO : 200 status returned by api
+2016-10-16 06:45:28 : INFO : Day 0 : forecast - 10 - SHOWERS
+2016-10-16 06:45:28 : INFO : Day 0 : maximum temp - 16
+2016-10-16 06:45:28 : INFO : Day 1 : forecast - 3 - PART_CLOUD
+2016-10-16 06:45:28 : INFO : Day 1 : maximum temp - 15
+2016-10-16 06:45:28 : INFO : Day 2 : forecast - 10 - SHOWERS
+2016-10-16 06:45:28 : INFO : Day 2 : maximum temp - 11
+2016-10-16 06:45:28 : INFO : Day 3 : forecast - 7 - CLOUD
+2016-10-16 06:45:28 : INFO : Day 3 : maximum temp - 12
