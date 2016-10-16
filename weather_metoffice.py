@@ -36,7 +36,6 @@ LOG_FILE = None
 LOG_LEVEL = None
 LOG_TO_FILE = False
 NIGHT_START = None
-global RESP_STATUS
 
 ICON_MAP = { # Day forecast codes only
 #   Met Office weather code         LED 8x8 icon
@@ -120,7 +119,7 @@ def start_logging():
 	logger.setLevel(logging.DEBUG)
     else:
     	print "Invalid LOG_LEVEL set: {0}".format(LOG_LEVEL)
-	    display_error()
+	display_error()
         sys.exit(1)
     logger.addHandler(handler)
     logging.info('-'*35)
@@ -135,14 +134,15 @@ def make_metoffice_request():
         conn.request("GET", REQUEST)
         resp = conn.getresponse()
         data = resp.read()
+        global RESP_STATUS
         RESP_STATUS = resp.status
         if resp.status != 200:
             if LOG_TO_FILE == 'True':
                 logging.error("Non-200 status returned by api: {1} : {2}".format(resp.status, resp.reason))
-		        logging.error("Request: {}".format(REQUEST))
+		logging.error("Request: {}".format(REQUEST))
             else:
                 print "Non-200 status returned by api: {1} : {2}".format(resp.status, resp.reason)
-		        print "Request: {}".format(REQUEST)
+		print "Request: {}".format(REQUEST)
             display_error()
         else:
             if LOG_TO_FILE == 'True':
