@@ -84,11 +84,15 @@ def make_metoffice_request():
         print err
         giveup()
     else:
+        print resp.reason
         return data
     
 def get_forecast():
     """Return a list of forecast results."""
-    json_data = json.loads(make_metoffice_request())
+    try:
+        json_data = json.loads(make_metoffice_request())
+    except Exception as err:
+        print err
     forecast = []
     temperature = []
     current_hour = time.localtime().tm_hour

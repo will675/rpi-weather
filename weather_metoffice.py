@@ -87,8 +87,6 @@ def display_error():
     """Action to take if anything bad happens."""
     for matrix in xrange(4):
         display.set_raw64(LED8x8ICONS['UNKNOWN'],matrix)
-    print "Error occured."
-    # sys.exit(1)
     
 def read_config(filename):
     """Get config settings"""
@@ -103,7 +101,6 @@ def read_config(filename):
         LOG_TO_FILE = config.get('config', 'LOG_TO_FILE')
         NIGHT_START = config.get('config', 'NIGHT_START')
     except Exception as err:
-        print err
         display_error()
         sys.exit(1)
 
@@ -136,6 +133,7 @@ def make_metoffice_request():
         data = resp.read()
         global RESP_STATUS
         RESP_STATUS = resp.status
+	print RESP_STATUS
         if resp.status != 200:
             if LOG_TO_FILE == 'True':
                 logging.error("Non-200 status returned by api: {1} : {2}".format(resp.status, resp.reason))
@@ -153,14 +151,20 @@ def make_metoffice_request():
                 print "Request: {}".format(REQUEST)
     except Exception as err:
         logging.error("Error encountered on api request: {}".format(err))
-        print err
+	logging.error("Request: {}".format(REQUEST))
+        display_error()
+        return
     else:
         return data
     
 def get_forecast():
     """Return a list of forecast results. Logs forecast and temp values for each day to file, 
     as well as any unknown values encountered."""
-    json_data = json.loads(make_metoffice_request())
+    try:
+        json_data = json.loads(make_metoffice_request())
+    except Exception as err:
+        logging.error("Non-valid json response received")
+        display_error()
     forecast = []
     temperature = []
     current_hour = time.localtime().tm_hour
