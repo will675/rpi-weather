@@ -134,6 +134,7 @@ def make_metoffice_request():
         global RESP_STATUS
         RESP_STATUS = resp.status
 	print RESP_STATUS
+        print resp.reason
         if resp.status != 200:
             if LOG_TO_FILE == 'True':
                 logging.error("Non-200 status returned by api: {1} : {2}".format(resp.status, resp.reason))
@@ -153,7 +154,7 @@ def make_metoffice_request():
         logging.error("Error encountered on api request: {}".format(err))
 	logging.error("Request: {}".format(REQUEST))
         display_error()
-        return
+        return data
     else:
         return data
     
@@ -222,7 +223,7 @@ def display_forecast(forecast = None, temperature = None):
     """Display forecast as icons on LED 8x8 matrices."""
     if (forecast == None or temperature == None):
         return
-    for turns in xrange(2): # This will loop the current forecast and temp for about an hour before going to get latest from met office
+    for turns in xrange(30): # This will loop the current forecast and temp for about an hour before going to get latest from met office
         for matrix in xrange(4):
             try:
                 icon = ICON_MAP[int(forecast[matrix])]
